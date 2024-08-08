@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-5 mx-auto">
+            <div class="card bg-info text-white rounded shadow-lg">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        ID:<input type="text"  name="rr" value="{{uu.id}}"><br>
+                        <label for="name" class="mt-2 ps-2 fs-5">Name</label>
+                        <input type="text" value="{{uu.name}}" class="form-control mt-2" name="name" placeholder="Full Name">
+                   <br>
+                    
+                        <label for="email" class="mt-2 ps-2 fs-5">Email Address</label>
+                        <input type="email" value="{{uu.email}}" class="form-control mt-3" name="email" placeholder="Email Address">
+                   <br>
+                   
+                        <label for="password" class="mt-2 ps-2 fs-5">Password</label>
+                        <input type="password" value="{{uu.password}}" class="form-control mt-3" name="password" placeholder="Password">
+                   <br>
+                  
+                        <input type="checkbox" class="form-check-input" id="exampleCheck2"> Add <label for="form-check-label" class="fs-5 d-grid ps-4"></label> 
+                       
+                   
+                    <button type="submit" class="btn btn-secondary mt-3 mb-3 text-white">Update</button>
+
+           
+                    </form>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

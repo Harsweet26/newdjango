@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+    <div class="conatiner bg-warning text-dark text-center">
+        <h1 class="pt-5">This is new project of django</h1>
+        <p class=" pb-5">In this tutorial you get a step by step guide on how to install and create a Django project. You will learn how to create a project where you can add, read, update or delete data.</p>
+        {% comment %} <img src="{% static 'images/watch.jpg' %}"> {% endcomment %}
+    </div>
+
+
+    <div class="container">
+        <table class="table m-3" border="1">
+            <thead>
+                <tr>
+                    <th scope="col">Id<th>
+                    <th scope="col">Name<th>
+                    <th scope="col">Email<th>
+                    <th scope="col">Password<th>
+                    <th scope="col">Edit<th>
+                    <th scope="col">Delete<th>
+
+                </tr>
+            </thead>
+
+            {% for u in allusers %}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.password}}</td>
+                <td><a href="../edit?ppp={{u.id}}">update</a></td>
+                <td><a href="../delete?pp={{u.id}}">delete</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}
